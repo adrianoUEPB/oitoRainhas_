@@ -7,10 +7,20 @@ public class Arvore {
 		this.raiz = new No();
 	}
 	
-	public void insert(Tabuleiro tabuleiro) {
-		this.insert(this.raiz, tabuleiro);
+	public void insert(No no) {
+		
+		if (this.raiz == null) {
+			this.raiz = new No();
+		} else {
+			
+			No novoNo = new No();
+			novoNo.setPai(no);
+			
+			no.setFilhos(novoNo);
+			
+		}
 	}
-	
+		
 	public void insert(No no, Tabuleiro tabuleiro) {
 		
 		if (this.raiz == null) {
